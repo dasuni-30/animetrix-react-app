@@ -5,11 +5,11 @@ import './index.css'
 import { AuthProvider } from "@asgardeo/auth-react";
 
 const config = {
-    signInRedirectURL: "http://localhost:5173",
-    signOutRedirectURL: "http://localhost:5173",
-    clientID: "cJzzCgnbl8fCWMBi9Oa2GyaqIp8a",
-    baseUrl: "https://api.asgardeo.io/t/nipunib",
-    resourceServerURLs: ["https://bdc81b0c-bae6-43e8-b4aa-0702a82aee77-prod.e1-us-east-azure.choreoapis.dev/animetrix/movie-catalog-service/v1.0/categories"],
+    signInRedirectURL: import.meta.env.VITE_REACT_APP_BASE_URL,
+    signOutRedirectURL: import.meta.env.VITE_REACT_APP_BASE_URL,
+    clientID: import.meta.env.VITE_REACT_APP_CLIENT_ID,
+    baseUrl: import.meta.env.VITE_REACT_APP_ASGARDEO_BASE_URL,
+    resourceServerURLs: import.meta.env.VITE_REACT_APP_RESOURCE_SERVER_URLS,
     scope: [ "openid", "profile", "internal_login", "internal_user_mgt_view", "app_roles" ]
 };
 
