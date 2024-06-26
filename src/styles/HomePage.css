@@ -2,6 +2,8 @@
 .hero-section {
     margin: 0;
     background: url("../assets/naruto-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
     height: 13vh;
     padding: 66px;  
 }
