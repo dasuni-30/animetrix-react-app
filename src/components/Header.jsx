@@ -12,7 +12,6 @@ export const Header = () => {
     useEffect(() => {
         getDecodedIDToken()
             .then((decodedIdToken) => {
-                console.log("Decoded ID token", decodedIdToken);
                 if (decodedIdToken?.application_roles === "Anime-App-Admin") {
                     setIsResourcesAllowed(true);
                 }
