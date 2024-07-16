@@ -1,4 +1,4 @@
-# Animetrix: Anime Streaming Site
+![image](https://github.com/user-attachments/assets/2b406648-bc8e-4e6f-8880-9a240271d15e)
 
 Welcome to Animetrix! This is a demo project designed to showcase how to simplify React app login with Asgardeo and the Asgardeo React SDK. Animetrix is an anime streaming site where users can browse and watch their favorite anime shows.
 
