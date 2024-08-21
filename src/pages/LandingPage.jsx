@@ -10,6 +10,8 @@ export const LandingPage = () => {
     const navigate = useNavigate();
     const { on, state, signIn, signOut } = useAuthContext();
 
+    const signUpURL = import.meta.env.VITE_REACT_APP_SIGN_UP_URL+import.meta.env.REACT_APP_CLIENT_ID+"sp="+import.meta.env.REACT_APP_APPLICATION_NAME+"&redirect_url="+import.meta.env.REACT_APP_CLIENT_BASE_URL;
+
     useEffect(() => {
         on("sign-in", () => {
             navigate("/home");
@@ -34,7 +36,8 @@ export const LandingPage = () => {
                         <button onClick={ () => signIn() }>Sign In</button>
                     )
                 }
-                <button onClick={ () => navigate("/signup") }>Create Account</button>
+                <br></br>
+                <a  href={signUpURL} >Create Account</a>
             </div>
             </div>
         </div>
