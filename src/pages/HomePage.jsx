@@ -3,11 +3,13 @@ import { DefaultLayout } from "../layouts/Default";
 import { Loader } from "../components/Loader";
 import "../styles/HomePage.css";
 import { getMovieCategories } from "../api/movies";
+import { useAuthContext } from "@asgardeo/auth-react";
 
 export const HomePage = () => {
 
     const [ categories, setCategories ] = useState([]);
     const [ isRequestLoading, setIsRequestLoading ] = useState(false);
+    const { state, signIn, signOut } = useAuthContext();
 
     useEffect(() => {
         setIsRequestLoading(true);
@@ -33,9 +35,18 @@ export const HomePage = () => {
                             <p>
                                 a young ninja who dreams of becoming the Hokage, the strongest ninja and leader of his
                                 village. Despite facing adversity due to the nine-tailed fox demon sealed within him,
-                                Naruto's determination and unwavering belief in his dreams inspire those around him.
+                                Narutos determination and unwavering belief in his dreams inspire those around him.
                             </p>
                             <button className='hero-button'>Watch now</button>
+                            <div className='button-container'>
+                            {
+                                state?.isAuthenticated ? (
+                                    <button onClick={ () => signOut() }>Sign Out</button>
+                                ) : (
+                                    <button onClick={ () => signIn() }>Sign In</button>
+                                )
+                            }
+                        </div>
                         </div>
                     </div>
                 </div>
